@@ -1,0 +1,183 @@
+{
+    "position": "top",
+    "layer": "top",
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+    "margin-bottom": 0,
+
+    "modules-left": [
+      "custom/appmenu",
+      "clock",
+      "wlr/taskbar",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "network",
+      "cpu",
+      "group/audio",
+      "custom/notification",
+    ],
+
+    "custom/appmenu": {
+      "format": "󰣇 ",
+      "on-click": "rofi -show drun",
+      "tooltip": false,
+      "cursor": "pointer"
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 18,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "fullscreen",
+      "ignore-list": [
+        "kitty"
+      ],
+      "cursor": "pointer"
+    },
+    "hyprland/window": {  
+      "format": "{class}",
+      "tooltip": false,
+      "max-length": 120,
+      "icon": false,
+      "icon-size": 13,
+    },
+    "hyprland/workspaces": {
+      "on-click": "activate",
+      "active-only": false,
+      "all-outputs": true,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9"
+      },
+      "persistent-workspaces": {
+        "HDMI-A-1": [1, 2, 3, 4, 5]
+      },
+      "cursor": "pointer"
+    },
+
+    "group/audio": {
+      "orientation":"inherit",
+      "drawer": {
+       "transition-duration": 150,
+       "children-class": "pulseaudio",
+       "transition-left-to-right": false
+      },
+      "modules": [
+        "pulseaudio",
+        "pulseaudio#microphone",
+      ]
+    },
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "rotate": 0,
+      "format-muted": "婢",
+      "tooltip-format": "{volume}%",
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "cursor": "pointer",
+      "on-click-right": "pamixer --toggle-mute",
+      "on-scroll-up": "~/.config/scripts/volume.sh --inc",
+      "on-scroll-down": "~/.config/scripts/volume.sh --dec",
+      "on-scroll-up": "~/.config/scripts/volume.sh --inc",
+      "on-scroll-down": "~/.config/scripts/volume.sh --dec",
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": " ",
+      "on-click-right": "~/.config/scripts/volume.sh --toggle-mic",
+      "on-click": "pavucontrol -t 4",
+      "on-scroll-up": "~/.config/scripts/volume.sh --mic-inc",
+      "on-scroll-down": "~/.config/scripts/volume.sh --mic-dec",
+      "tooltip-format": "{source_desc} | {source_volume}%",
+      "scroll-step": 5,
+    },
+    "network": {
+      "interval": 1,
+      "format-wifi": "{bandwidthTotalBytes} {icon}",
+      "format-icons": ["󰤟", "󰤢", "󰤨"],
+      "format-ethernet":"{bandwidthTotalBytes}",
+      "format-disconnected": "",
+      "tooltip-format-disconnected": "No Network",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname} 🖧 ",
+      "on-click": "kitty nmtui",
+      "cursor": "pointer"
+    },
+    "cpu": {
+      "interval": 2,
+      "format": "{icon} {usage}%",
+      "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+      "on-click": "kitty -e btm",
+      "cursor": "pointer"
+    },
+    "clock": {
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%d %m %Y}",
+      "rotate": 0,
+      // "tooltip-format": "<tt>{calendar}</tt>",
+      "tooltip": false,
+      "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#fbf1c7'><b>{}</b></span>",
+          "weekdays": "<span color='#fabd2f'><b>{}</b></span>",
+          "today": "<span color='#d3869b'><b>{}</b></span>"
+        }
+      },
+      "on-click-right": "kitty -e peaclock",
+      "cursor": "pointer"
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "󰅸 ",
+        "none": "󰂜 ",
+        "dnd-notification": "󰅸 ",
+        "dnd-none": "󱏨 ",
+        "inhibited-notification": "󰅸 ",
+        "inhibited-none": "󰂜 ",
+        "dnd-inhibited-notification": "󰅸 ",
+        "dnd-inhibited-none": "󱏨 "
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click-right": "swaync-client -d -sw",
+      "on-click": "swaync-client -t -sw",
+      "escape": true,
+      "cursor": "pointer"
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "~/.local/bin/powermenu",
+      "cursor": "pointer"
+    }
+}

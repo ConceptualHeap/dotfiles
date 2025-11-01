@@ -1,0 +1,56 @@
+@theme "common"
+
+window {
+  location: north west;
+}
+
+mainbox {
+  children: [ "inputbar", "listview" ];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

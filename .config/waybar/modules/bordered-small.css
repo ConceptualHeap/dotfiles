@@ -1,0 +1,13 @@
+@import "base.css";
+
+#custom-appmenu,
+#taskbar,
+#window,
+#workspaces,
+#network,
+#cpu,
+#pulseaudio,
+#clock,
+#custom-notification {
+  border: 1px solid @primary_fg;
+}

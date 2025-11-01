@@ -1,0 +1,18 @@
+@import "base.css";
+
+#custom-appmenu,
+#taskbar,
+#window,
+#workspaces,
+#network,
+#cpu,
+#pulseaudio,
+#clock,
+#custom-notification {
+  border-radius: 8px;
+}
+
+#taskbar button,
+#workspaces button {
+  border-radius: 6px;
+}

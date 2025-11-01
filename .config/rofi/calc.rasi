@@ -1,0 +1,5 @@
+@theme "common.rasi"
+
+mainbox {
+  children: [ "inputbar", "message", "listview" ];
+}

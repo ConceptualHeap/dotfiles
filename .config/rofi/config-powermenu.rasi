@@ -1,0 +1,57 @@
+@theme "common.rasi"
+
+* {
+  font: "JetbrainsMono Nerd Font 24";
+}
+
+window {
+  width: 500px;
+}
+
+mainbox {
+  enabled: true;
+  background-color: transparent;
+  children: [ "listview" ];
+  padding: 0px;
+}
+
+listview {
+  enable: true;
+  columns: 5;
+  lines: 1;
+  cycle: true;
+  dynamic: false;
+  scrollbar: false;
+  layout: vertical;
+  reverse: false;
+  fixed-height: true;
+  fixed-width: false;
+  background-color: transparent;
+  text-color: @foreground;
+  cursor: "default";
+  spacing: 0px;
+  padding: 32px;
+}
+
+element {
+  enabled: true;
+  background-color: transparent;
+  text-color: @foreground;
+  cursor: pointer;
+  orientation: vertical;
+  border-radius: 4px;
+  margin: 0px;
+  cursor: "default";
+}
+
+element selected.normal,
+element selected.active {
+  background-color: @foreground;
+  text-color: @background-alt;
+  border-raidus: 4px;
+  margin: 0px;
+}
+
+element-text {
+  margin: 15px 0px 15px 30px;
+}

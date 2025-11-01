@@ -1,0 +1,5 @@
+@theme "common"
+
+mainbox {
+  children: [ "inputbar", "listview" ];
+}

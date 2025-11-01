@@ -1,0 +1,92 @@
+@theme "common.rasi"
+
+configuration {
+  show-icons: true;  
+  hover-select: false;
+  scroll-method: 1;
+}
+
+window {
+  width: 1920;
+}
+
+mainbox {
+  children: [ "inputbar", "message", "listview" ];
+}
+
+listview {
+  columns: 7;
+  lines: 1;
+  layout: vertical;
+  cursor: "default";
+  dynamic: false;
+  cycle: false;
+  orientation: horizontal;
+}
+
+element {
+  orientation: vertical;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    size: 256px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
