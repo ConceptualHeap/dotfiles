@@ -1,5 +1,13 @@
-@theme "common.rasi"
+@theme "config.rasi"
 
-mainbox {
-  children: [ "inputbar", "message", "listview" ];
+configuration {
+  show-icons: false;
 }
+
+window {}
+
+listbox {
+  children: [ "message", "listview" ];
+  background-color: @background;
+}
+

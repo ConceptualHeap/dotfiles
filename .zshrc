@@ -18,6 +18,7 @@ eval "$(zoxide init zsh)"
 # Custom exports
 export PATH=/home/osaka/.local/bin:$PATH
 export PATH=$PATH:/home/osaka/.spicetify
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # Aliases
 alias pipes="$HOME/.config/pipes.sh/pipes.sh"

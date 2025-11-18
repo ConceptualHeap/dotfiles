@@ -1,36 +1,25 @@
-@theme "common.rasi"
+@theme "config.rasi"
 
 * {
   font: "JetbrainsMono Nerd Font 24";
+  show-icons: false;
 }
 
 window {
-  width: 500px;
+  width: 660;
+  background-image: url("currentWal.thumb", height);
+  location: center;
 }
 
 mainbox {
-  enabled: true;
-  background-color: transparent;
   children: [ "listview" ];
-  padding: 0px;
+  margin: 0 0 0 512;
 }
 
 listview {
-  enable: true;
-  columns: 5;
-  lines: 1;
-  cycle: true;
-  dynamic: false;
-  scrollbar: false;
+  lines: 5;
   layout: vertical;
-  reverse: false;
-  fixed-height: true;
-  fixed-width: false;
-  background-color: transparent;
-  text-color: @foreground;
-  cursor: "default";
-  spacing: 0px;
-  padding: 32px;
+  padding: 8px;
 }
 
 element {
@@ -38,10 +27,11 @@ element {
   background-color: transparent;
   text-color: @foreground;
   cursor: pointer;
-  orientation: vertical;
+  orientation: horizontal;
   border-radius: 4px;
   margin: 0px;
   cursor: "default";
+  padding: 0;
 }
 
 element selected.normal,
@@ -53,5 +43,6 @@ element selected.active {
 }
 
 element-text {
-  margin: 15px 0px 15px 30px;
+  margin: 16px 0px 16px -8px;
+  padding: 0px;
 }

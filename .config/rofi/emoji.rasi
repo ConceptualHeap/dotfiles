@@ -1,5 +1,7 @@
-@theme "common"
+@theme "config.rasi"
 
-mainbox {
-  children: [ "inputbar", "listview" ];
+configuration {
+  show-icons: false;
 }
+
+

@@ -1,0 +1,183 @@
+@import "../colors.css";
+
+@define-color primary_bg @surface_container;
+@define-color text @on_surface;
+@define-color primary_fg @secondary;
+@define-color error @error_container;
+
+* {
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 14px;
+  border-radius: 0px;
+  font-weight: bold;
+  color: @text;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+#waybar {
+  background: transparent;
+}
+
+#custom-appmenu {
+  padding: 0px 4px 0px 12px;
+  font-size: 20px;
+  /* border-radius: 8px; */
+  margin: 0 4px 0 0;
+  background-color: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+
+#taskbar {
+  margin: 0px 4px;
+  padding: 2px;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  border: none;
+  /* border: 1px solid @primary_fg; */
+}
+
+#taskbar.empty {
+  background: transparent;
+  /* border: none; */
+  margin: 0;
+}
+
+#taskbar button {
+  padding: 0px 8px;
+  min-width: 12px;
+  color: transparent;
+  /* border-radius: 6px; */
+  transition: all 0.25s ease-in-out;
+  background: @primary_bg;
+}
+
+#taskbar button.active {
+  background-color: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+#taskbar button.active:hover {
+  background-color: transparent;
+}
+
+#taskbar button:hover {
+  background: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+#window {
+  margin: 0 0 0 4px;
+  padding: 0px 12px;
+  /* border-radius: 8px; */
+  background-color: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  /* border: none; */
+}
+
+/* MIDDLE */
+
+#workspaces {
+  /* border-radius: 8px; */
+  padding: 0px;
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+
+#workspaces button {
+  padding: 2px 12px;
+  margin: 2px;
+  /* border-radius: 6px; */
+  min-width: 16px;
+  background-color: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+#workspaces button label {
+  color: @text;
+}
+
+#workspaces button.active {
+  min-width: 48px;
+  transition: all 0.25s ease-in-out;
+  background-color: @primary_fg;
+  color: @primary_bg;
+}
+
+#workspaces button.active label {
+  color: @primary_bg;
+}
+
+#workspaces button.active:hover {
+  background-color: @primary_fg;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+  transition: all 0.25s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+/* RIGHT */
+
+#network {
+  margin: 0 4px;
+  padding: 0px 12px;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+#network.disconnected {
+  color: @error;
+}
+
+#cpu {
+  margin: 0 4px;
+  padding: 0px 12px;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+
+#pulseaudio {
+  margin: 0 4px;
+  padding: 0px 12px;
+  /* border-radius: 8px; */
+  font-size: 14px;
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+#pulseaudio.muted {
+  font-size: 16px;
+}
+
+#clock {
+  margin: 0 4px;
+  padding: 0px 12px;
+  background: transparent;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}
+
+#custom-notification {
+  margin: 0 4px;
+  padding: 0 4px 0 12px;
+  font-size: 18px;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  /* border: 1px solid @primary_fg; */
+}

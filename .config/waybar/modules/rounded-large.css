@@ -1,6 +1,8 @@
 @import "base.css";
 
 #custom-appmenu,
+#tray,
+#tray menu,
 #taskbar,
 #window,
 #workspaces,

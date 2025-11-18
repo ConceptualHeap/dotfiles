@@ -1,41 +1,65 @@
 @import "../colors.css";
 
-@define-color primary_bg @surface_container;
+@define-color primary_bg @surface;
+@define-color secondary_bg @surface_container;
 @define-color text @on_surface;
 @define-color primary_fg @secondary;
-@define-color error @error_container;
+@define-color error @red;
 
 * {
   font-family: "JetbrainsMono Nerd Font";
   font-size: 14px;
   border-radius: 0px;
   font-weight: bold;
-  color: @text;
-
   margin: 0;
   padding: 0;
   border: none;
   border-radius: 0;
+  color: @text;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 #waybar {
-  background: transparent;
+  background: alpha(@primary_bg, 1.0);
+  border-radius: 8px 8px 0 0;
+  /* border: 2px solid @primary_fg; */
+  border-bottom: 0px;
 }
 
 #custom-appmenu {
   padding: 0px 4px 0px 12px;
   font-size: 20px;
   /* border-radius: 8px; */
-  margin: 0 4px 0 0;
-  background-color: @primary_bg;
+  margin: 2px 2px;
+  background-color: @primary_fg;
+  color: @primary_bg;
+  border-radius: 6px;
   /* border: 1px solid @primary_fg; */
 }
 
-#taskbar {
-  margin: 0px 4px;
-  padding: 2px;
+#tray {
+  margin: 2px 2px;
+  padding: 0px 8px;
   /* border-radius: 8px; */
   background: @primary_bg;
+  border: none;
+  /* border: 1px solid @primary_fg; */
+}
+
+#tray menu {
+  background: @primary_bg;
+}
+
+#taskbar {
+  margin: 2px 2px;
+  /* border-radius: 8px; */
+  background: @primary_bg;
+  border: none;
   /* border: 1px solid @primary_fg; */
 }
 
@@ -49,13 +73,13 @@
   padding: 0px 8px;
   min-width: 12px;
   color: transparent;
-  /* border-radius: 6px; */
+  border-radius: 6px;
   transition: all 0.25s ease-in-out;
   background: @primary_bg;
 }
 
 #taskbar button.active {
-  background-color: transparent;
+  background-color: @primary_fg;
   transition: all 0.25s ease-in-out;
 }
 
@@ -69,8 +93,8 @@
 }
 
 #window {
-  margin: 0 0 0 4px;
-  padding: 0px 12px;
+  margin: 2px 2px;
+  padding: 0px 8px;
   /* border-radius: 8px; */
   background-color: @primary_bg;
   /* border: 1px solid @primary_fg; */
@@ -88,21 +112,23 @@ window#waybar.empty #window {
 #workspaces {
   /* border-radius: 8px; */
   padding: 0px;
+  margin: 2px 2px;
   background: @primary_bg;
   /* border: 1px solid @primary_fg; */
 }
 
 #workspaces button {
   padding: 2px 12px;
-  margin: 2px;
-  /* border-radius: 6px; */
+  border-radius: 6px;
   min-width: 16px;
   background-color: transparent;
   transition: all 0.25s ease-in-out;
+
 }
 
 #workspaces button label {
   color: @text;
+  margin: 0 0 0 2px;
 }
 
 #workspaces button.active {
@@ -133,8 +159,8 @@ window#waybar.empty #window {
 /* RIGHT */
 
 #network {
-  margin: 0 4px;
-  padding: 0px 12px;
+  margin: 2px 2px;
+  padding: 0px 8px;
   /* border-radius: 8px; */
   background: @primary_bg;
   /* border: 1px solid @primary_fg; */
@@ -144,16 +170,16 @@ window#waybar.empty #window {
 }
 
 #cpu {
-  margin: 0 4px;
-  padding: 0px 12px;
+  margin: 2px 2px;
+  padding: 0px 8px;
   /* border-radius: 8px; */
   background: @primary_bg;
   /* border: 1px solid @primary_fg; */
 }
 
 #pulseaudio {
-  margin: 0 4px;
-  padding: 0px 12px;
+  margin: 2px 2px;
+  padding: 0px 8px;
   /* border-radius: 8px; */
   font-size: 14px;
   background: @primary_bg;
@@ -164,8 +190,8 @@ window#waybar.empty #window {
 }
 
 #clock {
-  margin: 0 4px;
-  padding: 0px 12px;
+  margin: 2px 2px;
+  padding: 0px 8px;
   background: transparent;
   /* border-radius: 8px; */
   background: @primary_bg;
@@ -173,10 +199,12 @@ window#waybar.empty #window {
 }
 
 #custom-notification {
-  margin: 0 4px;
+  margin: 2px 2px;
   padding: 0 4px 0 12px;
   font-size: 18px;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  background: @primary_fg;
+  border-radius: 6px;
+  color: @primary_bg;
   /* border: 1px solid @primary_fg; */
 }

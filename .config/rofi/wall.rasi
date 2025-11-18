@@ -1,47 +1,65 @@
-@theme "common.rasi"
+@theme "config.rasi"
 
 configuration {
-  show-icons: true;  
   hover-select: false;
   scroll-method: 1;
 }
 
 window {
-  width: 1920;
+  width: 1920px;
 }
 
 mainbox {
-  children: [ "inputbar", "message", "listview" ];
+  children: ["inputbar", "listview"];
+  orientation: vertical;
+}
+
+imagebox {
+  max-width: 512;
+}
+
+listbox {
+  background-color: @background;
 }
 
 listview {
   columns: 7;
   lines: 1;
-  layout: vertical;
-  cursor: "default";
-  dynamic: false;
-  cycle: false;
-  orientation: horizontal;
+
 }
 
 element {
   orientation: vertical;
+  background-color: @foreground;
+  border-radius: 8px;
+}
+
+element selected.normal {
+    background-color:            @foreground;
+    text-color:                  @background;
+    border-color:                @foreground-alt;
 }
 
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
+    margin: 2px;
+    border: 2px;
+    border-color: @foreground;
+    border-radius: 6px;
     size: 256px;
     horizontal-align: 0.5;
-    vertical-align: 0.5;
 }
+
 element-text {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  @background;
     highlight:                   inherit;
     cursor:                      inherit;
     font: "JetBrainsMono Nerd Font 10";
+    horizontal-align: 0.5;
+    margin: 8px;
 }
 
 

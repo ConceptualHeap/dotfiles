@@ -5,11 +5,6 @@
 ---@type ChadrcConfig
 local M = {}
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
-vim.opt.relativenumber = true
-
 M.base46 = {
 	theme = "chadwal",
 
