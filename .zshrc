@@ -16,13 +16,22 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Custom exports
-export PATH=/home/osaka/.local/bin:$PATH
-export PATH=$PATH:/home/osaka/.spicetify
+export PATH=$PATH:/home/urabe/SDL_shadercross/build
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # Aliases
 alias pipes="$HOME/.config/pipes.sh/pipes.sh"
 alias bat="bat --theme base16"
+
+alias search="sudo pacman -Ss"
+alias install="sudo pacman -S"
+alias update="sudo pacman -Syu"
+alias remove="sudo pacman -Rns"
+
+alias ysearch="yay -Ss"
+alias yinstall="yay -S"
+alias yupdate="yay -Syu"
+alias yremove="yay -Rns"
 
 # fzf
 source <(fzf --zsh)

@@ -53,7 +53,11 @@ if [ -n "$SELECTED_WALL" ]; then
   matugen image "$ORIGINAL"
 
   magick "$ORIGINAL" -strip -resize 512x512^ -gravity center -extent 512x512 -quality 90 $HOME/.config/rofi/currentWal.thumb 
-  magick "$ORIGINAL" -strip -resize 512x512^ -gravity center -extent 512x512 -quality 90 $HOME/.config/ags/powermenu/currentWal.thumb 
+
+  rm -rf ~/.cache/fastfetch/
+  cp $HOME/.config/rofi/currentWal.thumb $HOME/.config/fastfetch/currWall.thumb
+
+  cp $HOME/.config/rofi/currentWal.thumb $HOME/.config/hypr/currWall.thumb
 
   # magick "$ORIGINAL" -resize 512x512^ -gravity center -extent 512x512 $HOME/.config/rofi/currentWal.thumb
 

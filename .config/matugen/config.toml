@@ -16,6 +16,10 @@ output_path = '~/.config/waybar/colors.css'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/swaync/colors.css'
 
+[templates.nwg-dock]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/nwg-dock-hyprland/colors.css'
+
 [templates.ags]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/ags/powermenu/colors.css'
@@ -72,6 +76,11 @@ output_path = '~/.config/BetterDiscord/themes/midnight.theme.css'
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux-colors.conf'
+output_path = '~/.config/tmux/generated.conf'
+post_hook = 'tmux source-file ~/.config/tmux/generated.conf'
 
 # NVCHAD
 

@@ -36,6 +36,8 @@ vim.schedule(function()
   require "mappings"
 end)
 
+vim.opt.foldmethod = "indent"
+
 os.execute("python ~/.config/nvim/pywal/chadwal.py &> /dev/null &")
 
 local autocmd = vim.api.nvim_create_autocmd
@@ -46,3 +48,5 @@ autocmd("Signal", {
     require('nvchad.utils').reload()
   end
 })
+
+vim.opt.clipboard = ""

@@ -29,11 +29,14 @@ configuration {
 
 window {
   transparency: "real";
-  location: south west;
+  location: center;
   anchor: center;
   fullscreen: false;
   x-offset: 0px;
   y-offset: 0px;
+
+  width: 985px;
+  height: 512px;
 
   enabled: true;
   margin: 8px;

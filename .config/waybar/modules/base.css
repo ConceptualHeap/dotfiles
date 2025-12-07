@@ -25,10 +25,17 @@ button {
 }
 
 #waybar {
-  background: alpha(@primary_bg, 1.0);
-  border-radius: 8px 8px 0 0;
-  /* border: 2px solid @primary_fg; */
+  background: alpha(@primary_bg, 0.0);
+  border-radius: 0 0 8px 8px;
   border-bottom: 0px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: @primary_bg;
+  border-radius: 8px;
+  border: 2px solid @primary_fg;
 }
 
 #custom-appmenu {
@@ -46,19 +53,20 @@ button {
   margin: 2px 2px;
   padding: 0px 8px;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  /* background: @primary_bg; */
   border: none;
   /* border: 1px solid @primary_fg; */
 }
 
 #tray menu {
-  background: @primary_bg;
+  /* background: @primary_bg; */
+  padding: 10px;
 }
 
 #taskbar {
   margin: 2px 2px;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  /* background: @primary_bg; */
   border: none;
   /* border: 1px solid @primary_fg; */
 }
@@ -75,11 +83,12 @@ button {
   color: transparent;
   border-radius: 6px;
   transition: all 0.25s ease-in-out;
-  background: @primary_bg;
+  /* background: @primary_bg; */
 }
 
 #taskbar button.active {
-  background-color: @primary_fg;
+  /* background-color: @primary_fg; */
+  /* border: 1px solid @primary_fg; */
   transition: all 0.25s ease-in-out;
 }
 
@@ -96,7 +105,7 @@ button {
   margin: 2px 2px;
   padding: 0px 8px;
   /* border-radius: 8px; */
-  background-color: @primary_bg;
+  /* background-color: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 
@@ -113,7 +122,7 @@ window#waybar.empty #window {
   /* border-radius: 8px; */
   padding: 0px;
   margin: 2px 2px;
-  background: @primary_bg;
+  /* background: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 
@@ -156,13 +165,31 @@ window#waybar.empty #window {
   transition: all 0.25s ease-in-out;
 }
 
+
 /* RIGHT */
+
+/* #custom-arrow { */
+/*   padding: 0px 10px 0px 10px; */
+/*   font-size: 20px; */
+/*   margin: 2px 2px; */
+/*   background-color: @primary_fg; */
+/*   color: @primary_bg; */
+/*   border-radius: 6px; */
+/* } */
+#custom-arrow {
+  padding: 0px 10px 0px 10px;
+  font-size: 20px;
+  margin: 2px 2px;
+  color: @text;
+  border-radius: 6px;
+  font-size: 12px;
+}
 
 #network {
   margin: 2px 2px;
   padding: 0px 8px;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  /* background: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 #network.disconnected {
@@ -173,7 +200,7 @@ window#waybar.empty #window {
   margin: 2px 2px;
   padding: 0px 8px;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  /* background: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 
@@ -182,7 +209,7 @@ window#waybar.empty #window {
   padding: 0px 8px;
   /* border-radius: 8px; */
   font-size: 14px;
-  background: @primary_bg;
+  /* background: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 #pulseaudio.muted {
@@ -194,7 +221,7 @@ window#waybar.empty #window {
   padding: 0px 8px;
   background: transparent;
   /* border-radius: 8px; */
-  background: @primary_bg;
+  /* background: @primary_bg; */
   /* border: 1px solid @primary_fg; */
 }
 

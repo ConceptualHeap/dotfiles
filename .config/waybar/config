@@ -1,24 +1,26 @@
 {
-    "position": "bottom",
+    "position": "top",
     "layer": "top",
-    "margin-top": 0,
+    "margin-top": 8,
     "margin-left": 8,
     "margin-right": 8,
     "margin-bottom": 0,
 
     "modules-left": [
       "custom/appmenu",
-      "wlr/taskbar",
+      // "wlr/taskbar",
       "hyprland/window"
     ],
     "modules-center": [
       "hyprland/workspaces"
     ],
     "modules-right": [
-      "tray",
-      "network",
-      "cpu",
-      "group/audio",
+      // "tray",
+      // "network",
+      // "cpu",
+      // "group/audio",
+      "group/utils",
+      "pulseaudio",
       "clock",
       "custom/notification",
     ],
@@ -27,13 +29,6 @@
       "format": "󰣇 ",
       "on-click": "rofi -show drun",
       "tooltip": false,
-      "cursor": "pointer"
-    },
-    "tray": {
-      "format": "{icon}",
-      "icon-size": 18,
-      "tooltip-format": "{title}",
-      "on-click": "activate",
       "cursor": "pointer"
     },
     "wlr/taskbar": {
@@ -89,9 +84,10 @@
       ]
     },
     "pulseaudio": {
-      "format": "{icon}  {volume}%",
+      // "format": "{icon}  {volume}%",
+      "format": "{icon}",
       "rotate": 0,
-      "format-muted": "婢",
+      "format-muted": " ",
       "tooltip-format": "{volume}%",
       "scroll-step": 1,
       "on-click": "pavucontrol",
@@ -121,6 +117,33 @@
       "on-scroll-down": "~/.config/scripts/volume.sh --mic-dec",
       "tooltip-format": "{source_desc} | {source_volume}%",
       "scroll-step": 5,
+    },
+    "group/utils": {
+      "orientation": "inherit",
+      "drawer": {
+       "transition-duration": 512,
+       "children-class": "pulseaudio",
+       "transition-left-to-right": false
+      },
+      "modules": [
+        "custom/arrow",
+        "tray",
+        "network",
+        "cpu",
+      ]
+    },
+    "custom/arrow": {
+      "format": "",
+      "on-click": "rofi -show drun",
+      "tooltip": false,
+      "cursor": "pointer"
+    },
+    "tray": {
+      "format": "{icon}",
+      "icon-size": 18,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "cursor": "pointer"
     },
     "network": {
       "interval": 1,
